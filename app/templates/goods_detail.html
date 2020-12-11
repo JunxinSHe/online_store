@@ -1,0 +1,62 @@
+{% extends "base2.html" %}
+{% block title %}商品详细{% endblock %}
+{% block body %}
+<style type="text/css">
+.title {
+	font-size: 20px;
+	color: #FF6600;
+	font-style: italic;
+}
+</style>
+
+<table width="100%" border="0" align="center">
+  <tr>
+    <td width="616"><img src="{{ url_for('static', filename='images/info.jpg') }}" align="absmiddle" /></td>
+    {% include 'goods_header.html' %}
+  </tr>
+</table>
+<hr width="100%" />
+<div class="text3" align="center">{{ goods.name }}</div>
+<table width="100%" border="0" align="center">
+  <tr>
+    <td width="40%" align="right"><div><img src="{{ url_for('static', filename='goods_images/') }}{{ goods.image }}" width="360px" height="360px" /></div>
+      <br></td>
+    <td><div align="center" class="text4">Price：<span class="title">${{ goods.price }}</span></div>
+      <br>
+      <table width="80%" height="200" border="0">
+        <tbody>
+          <tr>
+            <td  width="25%" class="text5" >Brand：</td>
+            <td width="25%" class="text6" > {{  goods.cpubrand }}</td>
+            <td width="25%" class="text5" >CPU Brand：</td>
+            <td width="25%" class="text6" >{{ goods.brand }}</td>
+          </tr>
+          <tr>
+            <td class="text5" >Memory Capacity：</td>
+            <td class="text6" >{{ goods.memorycapacity }}</td>
+            <td class="text5" >CPU Type：</td>
+            <td class="text6" >{{ goods.cputype }}</td>
+          </tr>
+          <tr>
+            <td class="text5" >Hard Disk capacity：</td>
+            <td class="text6" >{{ goods.hdcapacity }}</td>
+            <td class="text5" >Card Model：</td>
+            <td class="text6" >{{ goods.cardmodel }}</td>
+          </tr>
+          <tr>
+            <td class="text5" >Display Size：</td>
+            <td class="text6" >{{ goods.displaysize }}</td>
+            <td class="text5" >&nbsp;</td>
+            <td class="text6" >&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+      <div>
+        <a href="/add?id={{ goods.id }}&name={{ goods.name }}&price={{ goods.price }}"><img src="{{ url_for('static', filename='images/button.jpg') }}"/>
+      </div>
+    </td>
+  </tr>
+</table>
+{% endblock %}

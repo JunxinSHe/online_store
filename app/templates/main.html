@@ -1,0 +1,37 @@
+{% extends "base1.html" %}
+{% block title %}Login{% endblock %}
+{% block body %}
+<style type="text/css">
+a:link {
+	font-size: 18px;
+	color: #DB8400;
+	text-decoration: none;
+	font-weight: bolder;
+}
+a:visited {
+	font-size: 18px;
+	color: #DB8400;
+	text-decoration: none;
+	font-weight: bolder;
+}
+a:hover {
+	font-size: 18px;
+	color: #DB8400;
+	text-decoration: underline;
+	font-weight: bolder;
+}
+</style>
+
+<div>
+  <p class="text1"> <img src="{{ url_for('static', filename='images/4.jpg') }}"   align="absmiddle" /> <a href="/list">Product List</a> </p>
+  <p class="text2"> You can buy you favorite products! </p>
+</div>
+<hr width="100%" />
+<div>
+  <p class="text1"> <img src="{{ url_for('static', filename='images/mycar1.jpg') }}" align="absmiddle"  /> <a href="/cart">Cart</a> </p>
+  <p class="text2"> You can put your product into cart </p>
+</div>
+{% endblock %}
+
+
+
